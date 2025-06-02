@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Cliente>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Nuevo Cliente";
+}
+
+<h2>Clientes</h2>
+
+<p>
+    <a asp-action="Create">Nuevo Cliente</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Email</td>
+                <td>@item.Telefono</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ClienteId">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ClienteId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

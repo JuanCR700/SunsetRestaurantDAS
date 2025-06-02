@@ -1,0 +1,16 @@
+﻿@model SunsetRestaurant.Models.Tarea
+
+@{
+    ViewData["Title"] = "Detalles de Tarea";
+}
+
+<h2>Detalles de la Tarea</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Evento:</strong> @Model.Evento?.Nombre</p>
+    <p><strong>Asignado a:</strong> @Model.AsignadoA?.ColabNombre</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.TareaId" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

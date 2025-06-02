@@ -1,0 +1,42 @@
+﻿@model SunsetRestaurant.Models.EventoCliente
+@{
+    ViewData["Title"] = "Editar Evento";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Editar Evento</h2>
+
+    <form asp-action="Editar" method="post" class="p-4 border rounded shadow bg-light">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ClienteId" />
+
+        <div class="mb-3">
+            <label asp-for="Tipo" class="form-label"></label>
+            <input asp-for="Tipo" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Fecha" class="form-label"></label>
+            <input asp-for="Fecha" type="date" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CantidadInvitados" class="form-label"></label>
+            <input asp-for="CantidadInvitados" type="number" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Presupuesto" class="form-label"></label>
+            <input asp-for="Presupuesto" type="number" step="0.01" class="form-control" required />
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a asp-action="MisReservas" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div style="background-color: #003366; color: white; display: flex; min-height: 100vh;">
+    <div style="width: 250px; background-color: #f1faee; padding: 20px; color: #1d3557;">
+        <h5 class="text-center">OPCIONES</h5>
+        <ul class="nav flex-column">
+            <li class="nav-item my-2"><a asp-action="Tareas" class="btn btn-primary w-100">TAREAS</a></li>
+            <li class="nav-item my-2"><a href="#" class="btn btn-primary w-100">REGISTRAR USUARIO</a></li>
+            <li class="nav-item my-2"><a asp-controller="Eventos" asp-action="Create" class="btn btn-primary w-100">REGISTRAR EVENTO</a></li>
+            <li class="nav-item my-2"><a asp-action="Registros" class="btn btn-primary w-100">MODIFICAR EVENTO</a></li>
+            <li class="nav-item my-2"><a asp-action="Registros" class="btn btn-primary w-100">VER REGISTROS</a></li>
+            <li class="nav-item my-2"><a asp-action="Calendario" class="btn btn-primary w-100">VER CALENDARIO</a></li>
+        </ul>
+    </div>
+
+    <div style="flex-grow: 1; padding: 50px; text-align: center;">
+        <h1 style="font-family: 'Brush Script MT', cursive; font-size: 3rem; color: #e9c46a;">Sunset Restaurant</h1>
+        <h2>WELCOME</h2>
+        <img src="https://via.placeholder.com/150" class="rounded-circle my-3" alt="User Avatar">
+        <h4>USER *******</h4>
+    </div>
+</div>

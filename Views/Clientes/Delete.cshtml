@@ -1,0 +1,37 @@
+﻿@model SunsetRestaurant.Models.Cliente?
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Eliminar Perfil";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null)
+{
+    <div class="alert alert-danger">
+        Cliente no encontrado.
+    </div>
+}
+else
+{
+    <h3>¿Está seguro de que desea eliminar este cliente?</h3>
+    <div>
+        <h4>Cliente</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Nombre</dt>
+            <dd class="col-sm-10">@Model.Nombre</dd>
+            <dt class="col-sm-2">Email</dt>
+            <dd class="col-sm-10">@Model.Email</dd>
+            <dt class="col-sm-2">Teléfono</dt>
+            <dd class="col-sm-10">@Model.Telefono</dd>
+        </dl>
+
+        <form asp-action="DeleteConfirmed" method="post">
+            <input type="hidden" asp-for="ClienteId" />
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+}

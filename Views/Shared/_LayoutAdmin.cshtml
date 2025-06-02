@@ -1,0 +1,95 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Panel Administrativo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            flex-shrink: 0;
+            padding-top: 1rem;
+        }
+
+            .sidebar a {
+                color: #ddd;
+                text-decoration: none;
+                padding: 10px 20px;
+                display: block;
+            }
+
+                .sidebar a:hover,
+                .sidebar a.active {
+                    background-color: #495057;
+                    color: #fff;
+                }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+        }
+    </style>
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div class="sidebar">
+        <h5 class="text-center mb-4"><i class="fa-solid fa-user-shield"></i> Panel</h5>
+
+        <a asp-controller="------------" asp-action="Index" class="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Tareas" ? "active" : "")">
+            <i class="fa-solid fa-list-check me-2"></i> Tareas
+        </a>
+
+        <a asp-controller="------------" asp-action="Registrarse" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Registrarse" ? "active" : "")">
+            <i class="fa-solid fa-user-plus me-2"></i> Registrar Usuario
+        </a>
+
+        <a asp-controller="------------" asp-action="Registrar" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Registrar" ? "active" : "")">
+            <i class="fa-solid fa-calendar-plus me-2"></i> Registrar Evento
+        </a>
+
+        <a asp-controller="------------" asp-action="MisReservas" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "MisReservas" ? "active" : "")">
+            <i class="fa-solid fa-pen-to-square me-2"></i> Modificar Evento
+        </a>
+
+        <a asp-controller="Dashboard" asp-action="Registros" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "VerRegistros" ? "active" : "")">
+            <i class="fa-solid fa-table me-2"></i> Ver Registros
+        </a>
+
+        <a asp-controller="Dashboard" asp-action="Calendario" class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Calendario" ? "active" : "")">
+            <i class="fa-solid fa-calendar-days me-2"></i> Ver Calendario
+        </a>
+
+        <hr class="bg-light" />
+
+        <a asp-controller="Clientes" asp-action="Logout" class="text-warning">
+            <i class="fa-solid fa-sign-out-alt me-2"></i> Cerrar sesión
+        </a>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

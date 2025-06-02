@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Lista de Tareas";
+}
+
+<h2>Lista de Tareas</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre Tarea</th>
+            <th>Evento (ID Cliente)</th>
+            <th>Tipo Evento</th>
+            <th>Fecha Evento</th>
+            <th>Asignado a</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+
+                <td>@(item.Evento?.ClienteId.ToString() ?? "Cliente desconocido")</td>
+
+                <td>@(item.Evento?.TipoEventoId.ToString() ?? "Tipo desconocido")</td>
+
+                <td>
+                    @(item.Evento?.FechaEvento.HasValue == true
+                                    ? item.Evento.FechaEvento.Value.ToString("dd/MM/yyyy")
+                                    : "Sin fecha")
+                </td>
+
+
+                <td>@(item.AsignadoA?.ColabNombre ?? "No asignado")</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+﻿@model SunsetRestaurant.Models.Tarea
+
+@{
+    ViewData["Title"] = "Eliminar Tarea";
+}
+
+<h2>¿Estás seguro de que deseas eliminar esta tarea?</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Evento:</strong> @Model.Evento?.Nombre</p>
+    <p><strong>Asignado a:</strong> @Model.AsignadoA?.ColabNombre</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="TareaId" />
+    <button type="submit" class="btn btn-danger mt-3">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

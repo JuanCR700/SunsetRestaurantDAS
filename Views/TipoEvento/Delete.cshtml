@@ -1,0 +1,17 @@
+﻿@model SunsetRestaurant.Models.TipoEvento
+
+@{
+    ViewData["Title"] = "Eliminar Tipo de Evento";
+}
+
+<h2>¿Seguro que deseas eliminar este tipo de evento?</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="TipoEventoId" />
+    <button type="submit" class="btn btn-danger mt-3">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

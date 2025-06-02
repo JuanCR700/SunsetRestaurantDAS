@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.TipoEvento>
+
+@{
+    ViewData["Title"] = "Tipos de Evento";
+}
+
+<h2>Lista de Tipos de Evento</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear nuevo tipo</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TipoEventoId" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.TipoEventoId" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.TipoEventoId" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

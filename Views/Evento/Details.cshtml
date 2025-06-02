@@ -1,0 +1,23 @@
+﻿@model SunsetRestaurant.Models.Evento
+
+@{
+    ViewData["Title"] = "Detalles del Evento";
+}
+
+<h2>Detalles del Evento</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr><th>Nombre</th><td>@Model.Nombre</td></tr>
+        <tr><th>Cliente</th><td>@Model.Cliente?.Nombre</td></tr>
+        <tr><th>Tipo de Evento</th><td>@Model.TipoEvento?.Nombre</td></tr>
+        <tr><th>Fecha</th><td>@Model.FechaEvento?.ToShortDateString()</td></tr>
+        <tr><th>Estado</th><td>@Model.Estado</td></tr>
+        <tr><th>Invitados</th><td>@Model.CantidadInvitados</td></tr>
+        <tr><th>Adelanto</th><td>@Model.Adelanto.ToString("C")</td></tr>
+        <tr><th>Total a Pagar</th><td>@Model.TotalAPagar.ToString("C")</td></tr>
+    </table>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.EventoId" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Reserva>
+
+@{
+    ViewData["Title"] = "Reservas";
+}
+
+<h2>Reservas</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nueva Reserva</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Cliente</th>
+            <th>Colaborador</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reserva in Model)
+        {
+            <tr>
+                <td>@reserva.Fecha.ToString("yyyy-MM-dd")</td>
+                <td>@reserva.Estado</td>
+                <td>@reserva.Cliente?.Nombre</td>
+                <td>@reserva.Colaborador?.ColabNombre</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@reserva.ReservaId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@reserva.ReservaId">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@reserva.ReservaId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

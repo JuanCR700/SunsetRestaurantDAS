@@ -1,0 +1,28 @@
+﻿@model SunsetRestaurant.Models.Colaborador
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Eliminar Colaborador";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>¿Está seguro de que desea eliminar este colaborador?</h3>
+<div>
+    <h4>Colaborador</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.ColabNombre</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.ColabEmail</dd>
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.ColabTelefono</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="ColaboradorId" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

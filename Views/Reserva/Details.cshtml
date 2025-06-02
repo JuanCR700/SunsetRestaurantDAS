@@ -1,0 +1,16 @@
+﻿@model SunsetRestaurant.Models.Reserva
+
+@{
+    ViewData["Title"] = "Detalles de Reserva";
+}
+
+<h2>Detalles de Reserva</h2>
+
+<div>
+    <p><strong>Fecha:</strong> @Model.Fecha.ToShortDateString()</p>
+    <p><strong>Estado:</strong> @Model.Estado</p>
+    <p><strong>Cliente:</strong> @Model.Cliente?.Nombre</p>
+    <p><strong>Colaborador:</strong> @Model.Colaborador?.ColabNombre</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

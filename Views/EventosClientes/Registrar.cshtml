@@ -1,0 +1,46 @@
+﻿@model SunsetRestaurant.Models.EventoCliente
+@{
+    ViewData["Title"] = "Registrar Evento";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registrar Evento</h2>
+
+    <form asp-action="Registrar" method="post" class="p-4 border rounded shadow bg-light">
+        <div class="mb-3">
+            <label asp-for="Tipo" class="form-label">Tipo de Evento</label>
+            <input asp-for="Tipo" class="form-control" required />
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Fecha" class="form-label">Fecha</label>
+            <input asp-for="Fecha" type="date" class="form-control" required />
+            <span asp-validation-for="Fecha" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CantidadInvitados" class="form-label">Cantidad de Invitados</label>
+            <input asp-for="CantidadInvitados" type="number" class="form-control" required />
+            <span asp-validation-for="CantidadInvitados" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Presupuesto" class="form-label">Presupuesto</label>
+            <input asp-for="Presupuesto" type="number" step="0.01" class="form-control" required />
+            <span asp-validation-for="Presupuesto" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a asp-controller="Clientes" asp-action="Logout" class="btn btn-secondary">Cerrar sesión</a>
+            <div>
+                <a asp-action="MisReservas" class="btn btn-info me-2">Ver mis reservas</a>
+                <button type="submit" class="btn btn-primary">Guardar Evento</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

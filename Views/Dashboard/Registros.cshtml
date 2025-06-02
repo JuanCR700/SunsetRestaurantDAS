@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Evento>
+
+@{
+    ViewData["Title"] = "Ver Registros";
+}
+
+<div style="background-color: #003366; padding: 30px;">
+    <div style="max-width: 1000px; margin: auto; background-color: white; padding: 20px; border-radius: 8px;">
+        <h4 class="text-center mb-4">REGISTROS</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CLIENTE ID</th>
+                    <th>TIPO</th>
+                    <th>N° INVITADOS</th>
+                    <th>ADELANTO</th>
+                    <th>TOTAL A PAGAR</th>
+                    <th>FECHA</th>
+                    <th>ACCIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ClienteId</td>
+                        <td>@item.TipoEventoId</td>
+                        <td>@item.CantidadInvitados</td>
+                        <td>@item.Adelanto.ToString("C")</td>
+                        <td>@item.TotalAPagar.ToString("C")</td>
+                        <td>
+                            @(item.FechaEvento.HasValue
+                                                    ? item.FechaEvento.Value.ToString("dd/MM/yyyy")
+                                                    : "Sin fecha")
+                    </td>
+                    <td>
+                        <a asp-controller="Eventos" asp-action="Edit" asp-route-id="@item.EventoId" class="btn btn-warning btn-sm">ACTUALIZAR</a>
+                        <a asp-controller="Eventos" asp-action="Delete" asp-route-id="@item.EventoId" class="btn btn-danger btn-sm">ELIMINAR</a>
+                    </td>
+                </tr>
+                                }
+            </tbody>
+        </table>
+    </div>
+</div>

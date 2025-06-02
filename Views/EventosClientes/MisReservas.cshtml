@@ -1,0 +1,40 @@
+﻿@model List<SunsetRestaurant.Models.EventoCliente>
+@{
+    ViewData["Title"] = "Mis Reservas";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Mis Reservas</h2>
+
+    <table class="table table-bordered table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Invitados</th>
+                <th>Presupuesto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var evento in Model)
+            {
+                <tr>
+                    <td>@evento.Tipo</td>
+                    <td>@evento.Fecha.ToShortDateString()</td>
+                    <td>@evento.CantidadInvitados</td>
+                    <td>$@evento.Presupuesto.ToString("N2")</td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@evento.Id" class="btn btn-sm btn-warning me-1">Editar</a>
+                        <a asp-action="Eliminar" asp-route-id="@evento.Id" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este evento?');">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+        <a asp-controller="Clientes" asp-action="Logout" class="btn btn-secondary">Cerrar sesión</a>
+        <a asp-action="Registrar" class="btn btn-primary">Registrar Nuevo Evento</a>
+    </div>
+</div>

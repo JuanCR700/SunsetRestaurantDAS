@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Colaborador>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Lista de Colaboradores";
+}
+
+<h2>Lista de Colaboradores</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nuevo Colaborador</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var colab in Model)
+        {
+            <tr>
+                <td>@colab.ColabNombre</td>
+                <td>@colab.ColabEmail</td>
+                <td>@colab.ColabTelefono</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@colab.ColaboradorId" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Details" asp-route-id="@colab.ColaboradorId" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@colab.ColaboradorId" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

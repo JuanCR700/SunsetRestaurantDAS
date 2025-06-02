@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Evento>
+
+@{
+    ViewData["Title"] = "Lista de Eventos";
+}
+
+<h2>Lista de Eventos</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Nuevo Evento</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Cliente</th>
+            <th>Tipo Evento</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Invitados</th>
+            <th>Adelanto</th>
+            <th>Total a Pagar</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Cliente?.Nombre</td>
+                <td>@item.TipoEvento?.Nombre</td>
+                <td>@item.FechaEvento?.ToShortDateString()</td>
+                <td>@item.Estado</td>
+                <td>@item.CantidadInvitados</td>
+                <td>@item.Adelanto.ToString("C")</td>
+                <td>@item.TotalAPagar.ToString("C")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EventoId" class="btn btn-sm btn-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.EventoId" class="btn btn-sm btn-info">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EventoId" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@model SunsetRestaurant.Models.Reserva
+
+@{
+    ViewData["Title"] = "Eliminar Reserva";
+}
+
+<h2>Eliminar Reserva</h2>
+
+<h4>¿Estás seguro que deseas eliminar esta reserva?</h4>
+
+<div>
+    <p><strong>Fecha:</strong> @Model.Fecha.ToShortDateString()</p>
+    <p><strong>Cliente:</strong> @Model.Cliente?.Nombre</p>
+    <p><strong>Colaborador:</strong> @Model.Colaborador?.ColabNombre</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="ReservaId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SunsetRestaurant.Models.Colaborador>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Iniciar Sesión - Colaborador";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">CREDENCIALES</h2>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <form asp-action="Login" method="post">
+        <div class="mb-3">
+            <label for="ColabEmail" class="form-label">USUARIO</label>
+            <input type="email" name="ColabEmail" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label for="ColabPassword" class="form-label">CONTRASEÑA</label>
+            <input type="password" name="ColabPassword" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">ENTRAR</button>
+    </form>
+</div>

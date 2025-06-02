@@ -1,0 +1,14 @@
+﻿@model SunsetRestaurant.Models.TipoEvento
+
+@{
+    ViewData["Title"] = "Detalles del Tipo de Evento";
+}
+
+<h2>Detalles del Tipo de Evento</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.TipoEventoId" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

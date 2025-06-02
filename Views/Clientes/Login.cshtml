@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+
+<div class="container d-flex justify-content-center">
+    <form method="post" asp-controller="Clientes" asp-action="Login" class="form-login w-50">
+        <div class="form-group">
+            <label for="Email">Correo electrónico:</label>
+            <input type="email" id="Email" name="Email" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="Password">Contraseña:</label>
+            <input type="password" id="Password" name="Password" class="form-control" required />
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-4">Iniciar sesión</button>
+        </div>
+    </form>
+</div>
+
+@if (ViewBag.Error != null)
+{
+    <p class="text-danger text-center">@ViewBag.Error</p>
+}
+
+<p class="text-center mt-3">
+    ¿No tienes cuenta? <a asp-action="Registrarse" asp-controller="Clientes" class="text-primary">Regístrate aquí</a>
+</p>
