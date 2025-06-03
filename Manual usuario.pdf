@@ -1,0 +1,70 @@
+Manual de Usuario - Sunset Restaurant
+1. Introducción
+Bienvenido a Sunset Restaurant, un sistema web diseñado para facilitar la gestión de eventos y colaboradores en el restaurante. Este manual está dirigido a usuarios finales y colaboradores que necesiten usar la plataforma para registrarse, iniciar sesión y administrar eventos.
+
+2. Requisitos para usar el sistema
+Un navegador web moderno (Google Chrome, Firefox, Edge, Safari).
+
+Conexión a internet.
+
+Acceso autorizado para ciertas funciones (registro y login).
+
+3. Registro de Usuario
+Navegue a la página de registro en el área personal.
+
+Complete el formulario con la información solicitada:
+
+Nombre completo.
+
+Correo electrónico.
+
+Teléfono.
+
+Contraseña.
+
+Presione el botón Registrar.
+
+Si el registro es exitoso, recibirá confirmación y podrá iniciar sesión.
+
+4. Inicio de sesión
+Vaya a la página de inicio de sesión.
+
+Ingrese su correo electrónico y contraseña.
+
+Presione Entrar.
+
+En caso de error, se mostrará un mensaje indicándolo.
+
+5. Gestión de Eventos (Para usuarios autorizados)
+Crear Evento
+Acceda al área de eventos.
+
+Seleccione Crear evento.
+
+Complete los detalles del evento: título, descripción, fecha, hora, lugar.
+
+Presione Guardar para registrar el evento.
+
+Modificar Evento
+En la lista de eventos, seleccione el evento que desea modificar.
+
+Presione Editar.
+
+Cambie los datos necesarios.
+
+Guarde los cambios.
+
+Eliminar Evento
+En la lista de eventos, seleccione el evento a eliminar.
+
+Presione Eliminar.
+
+Confirme la acción para eliminar el evento.
+
+6. Perfil de Usuario
+Puede actualizar su información personal (nombre, email, teléfono).
+
+Puede cambiar su contraseña desde la sección de perfil.
+
+7. Soporte
+Para cualquier problema o consulta, contacte con el administrador del sistema o el soporte técnico del restaurante.

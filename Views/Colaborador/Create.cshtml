@@ -7,32 +7,29 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="ColabNombre" class="control-label"></label>
-        <input asp-for="ColabNombre" class="form-control" />
-        <span asp-validation-for="ColabNombre" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ColabEmail" class="control-label"></label>
-        <input asp-for="ColabEmail" class="form-control" />
-        <span asp-validation-for="ColabEmail" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ColabTelefono" class="control-label"></label>
-        <input asp-for="ColabTelefono" class="form-control" />
-        <span asp-validation-for="ColabTelefono" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ColabPassword" class="control-label"></label>
-        <input asp-for="ColabPassword" class="form-control" type="password" />
-        <span asp-validation-for="ColabPassword" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
-</form>
+<div class="p-4 rounded shadow" style="background-color: #f4a261; color: white; max-width: 600px; margin: auto;">
+    <form asp-action="Create" method="post">
+        <div class="form-group mb-3">
+            <label asp-for="ColabNombre" class="control-label fw-bold"></label>
+            <input asp-for="ColabNombre" class="form-control" />
+            <span asp-validation-for="ColabNombre" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="ColabEmail" class="control-label fw-bold"></label>
+            <input asp-for="ColabEmail" class="form-control" />
+            <span asp-validation-for="ColabEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="ColabTelefono" class="control-label fw-bold"></label>
+            <input asp-for="ColabTelefono" class="form-control" />
+            <span asp-validation-for="ColabTelefono" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="ColabPassword" class="control-label fw-bold"></label>
+            <input asp-for="ColabPassword" class="form-control" type="password" />
+            <span asp-validation-for="ColabPassword" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-dark">Crear</button>
+    </form>
+</div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

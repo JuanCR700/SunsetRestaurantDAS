@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 
+
+
 namespace SunsetRestaurant.Models
 {
     public class Cliente
@@ -25,3 +27,4 @@ namespace SunsetRestaurant.Models
         public string Password { get; set; }
     }
 }
+

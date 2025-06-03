@@ -1,0 +1,76 @@
+Manual Técnico - Sunset Restaurant
+1. Introducción
+Sunset Restaurant es una aplicación web desarrollada con ASP.NET Core MVC, que facilita la administración de colaboradores y eventos para un restaurante. Este manual técnico está orientado a desarrolladores y administradores que necesiten entender y mantener el sistema.
+
+2. Arquitectura del sistema
+El proyecto sigue el patrón MVC (Modelo-Vista-Controlador).
+
+Las carpetas principales:
+
+Models: Contiene las clases que representan datos (Colaborador, Usuario, Evento).
+
+Views: Contiene las vistas para cada entidad y área.
+
+Controllers: Contiene los controladores que manejan las peticiones HTTP.
+
+wwwroot: Archivos estáticos (CSS, JS, imágenes).
+
+3. Base de datos
+SQL Server es el sistema gestor.
+
+Tablas principales:
+
+Colaboradores: Id, Nombre, Email, Teléfono, Contraseña.
+
+Usuarios: Id, Nombre, Email, Teléfono, Contraseña.
+
+Eventos: Id, Título, Descripción, Fecha, Hora, Lugar.
+
+4. Configuración del entorno
+Requisitos:
+
+Visual Studio 2022 o superior.
+
+SQL Server instalado y corriendo.
+
+Configurar la cadena de conexión en appsettings.json:
+
+json
+Copiar
+Editar
+"ConnectionStrings": {
+  "DefaultConnection": "Server=TU_SERVIDOR;Database=SunsetRestaurantDb;Trusted_Connection=True;"
+}
+5. Ejecutar el proyecto
+Abrir la solución en Visual Studio.
+
+Restaurar los paquetes NuGet.
+
+Actualizar la base de datos con migraciones si aplica (Update-Database).
+
+Ejecutar el proyecto con IIS Express o Kestrel.
+
+Abrir el navegador en la URL indicada (por defecto https://localhost:5001).
+
+6. Descripción de funcionalidades
+Módulo de Colaboradores: CRUD completo para gestionar colaboradores.
+
+Módulo de Usuarios: Registro, login y gestión de perfil.
+
+Módulo de Eventos: Crear, editar, eliminar y visualizar eventos.
+
+Autenticación: Login seguro para colaboradores y usuarios.
+
+7. Personalización y extensiones
+Para añadir nuevas vistas, crear archivos .cshtml dentro de la carpeta Views correspondiente.
+
+Para nuevas funcionalidades, agregar controladores y modelos en sus carpetas respectivas.
+
+Los estilos CSS personalizados están en wwwroot/css/site.css.
+
+8. Mantenimiento
+Mantener actualizados los paquetes NuGet.
+
+Realizar copias de seguridad de la base de datos.
+
+Revisar logs y manejar errores mediante middleware de ASP.NET.
