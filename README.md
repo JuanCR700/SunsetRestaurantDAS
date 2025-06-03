@@ -2,7 +2,7 @@ Este proyecto es un panel administrativo para la gestión de eventos en *Sunset 
 
 Características Principales
 
- 🗓 Calendario de Eventos
+  Calendario de Eventos
 - Usa la librería *FullCalendar*.
 - Muestra eventos cargados desde el servidor (ViewBag.Eventos).
 - Vista mensual, semanal y diaria.
