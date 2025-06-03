@@ -7750,23 +7750,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ferre\\.nuget\\packages\\": {},
+    "C:\\Users\\Quick\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DAS_Restaurante\\SunsetRestaurantDAS\\SunsetRestaurant.csproj",
+      "projectUniqueName": "C:\\Users\\Quick\\Desktop\\SunsetRestaurant\\SunsetRestaurant.csproj",
       "projectName": "SunsetRestaurant",
-      "projectPath": "C:\\DAS_Restaurante\\SunsetRestaurantDAS\\SunsetRestaurant.csproj",
-      "packagesPath": "C:\\Users\\Ferre\\.nuget\\packages\\",
-      "outputPath": "C:\\DAS_Restaurante\\SunsetRestaurantDAS\\obj\\",
+      "projectPath": "C:\\Users\\Quick\\Desktop\\SunsetRestaurant\\SunsetRestaurant.csproj",
+      "packagesPath": "C:\\Users\\Quick\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Quick\\Desktop\\SunsetRestaurant\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ferre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Quick\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7775,7 +7775,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.nuget.org/api/v2": {}
       },
       "frameworks": {
         "net8.0": {
@@ -7793,7 +7794,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -7833,7 +7834,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

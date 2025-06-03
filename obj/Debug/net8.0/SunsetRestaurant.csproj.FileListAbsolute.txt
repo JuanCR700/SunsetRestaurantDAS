@@ -570,3 +570,4 @@ C:\DAS_Restaurante\SunsetRestaurantDAS\obj\Debug\net8.0\refint\SunsetRestaurant.
 C:\DAS_Restaurante\SunsetRestaurantDAS\obj\Debug\net8.0\SunsetRestaurant.pdb
 C:\DAS_Restaurante\SunsetRestaurantDAS\obj\Debug\net8.0\SunsetRestaurant.genruntimeconfig.cache
 C:\DAS_Restaurante\SunsetRestaurantDAS\obj\Debug\net8.0\ref\SunsetRestaurant.dll
+C:\Users\Quick\Desktop\SunsetRestaurant\obj\Debug\net8.0\SunsetRestaurant.sourcelink.json
